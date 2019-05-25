@@ -1,5 +1,6 @@
 # Lintheus
 
+[![npm version](https://badge.fury.io/js/stylelint-config-lintheus.svg)](https://badge.fury.io/js/stylelint-config-lintheus)
 [![License](https://img.shields.io/badge/License-BSD%202--Clause-orange.svg)](https://opensource.org/licenses/BSD-2-Clause)
 
 My former co-worker CSS code review rules as a [stylelint](https://stylelint.io/) configuration.

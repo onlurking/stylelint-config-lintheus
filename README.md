@@ -7,23 +7,39 @@ My former co-worker CSS code review rules as a [stylelint](https://stylelint.io/
 
 ## Usage
 
-1. Install a compatible version of `stylelint` (we express it as a `peerDependency` so you can choose a version that works for you).
+**1.** Install a compatible version of `stylelint` (we express it as a `peerDependency` so you can choose a version that works for you).
 
-  ```
-  npm install --save-dev stylelint stylelint-config-lintheus
-  ```
+```
+npm install --save-dev stylelint stylelint-config-lintheus
+```
 
-2. Configure your stylelint configuration file to extend this package:
+**2.** Configure your stylelint configuration file to extend this package:
 
-  ```js
-  {
-    "extends": "stylelint-config-lintheus",
-    "rules": {
-      // Add overrides and additional rules here
-    }
+```js
+{
+  "extends": "stylelint-config-lintheus",
+  "rules": {
+    // Add overrides and additional rules here
   }
-  ```
+}
+```
+
 ## FAQ
 
 ### Why the project name is Lintheus?
-Is a joke with his name, Matheus and linters.
+Is a joke with my former co-worker name, Matheus and linters.
+
+### How can i get this up and running fast?
+Just create the `.stylelintrc` file with:
+
+```bash
+cat << EOF > .stylelintrc
+{
+  "extends": "stylelint-config-lintheus"
+}
+EOF
+```
+
+## Roadmap
+
+- [ ] document the decision behind every rule.

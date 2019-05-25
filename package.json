@@ -1,0 +1,28 @@
+{
+  "name": "stylelint-config-lintheus",
+  "version": "1.0.0",
+  "description": "stylelint configuration",
+  "main": "stylelint.config.js",
+  "dependencies": {
+    "stylelint-config-recommended": "^2.2.0",
+    "stylelint-order": "^3.0.0"
+  },
+  "peerDependencies": {
+    "stylelint": "^10.0.1"
+  },
+  "devDependencies": {
+    "stylelint": "^9.10.1"
+  },
+  "author": "Diogo Felix",
+  "license": "BSD-2-Clause",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:onlurking/stylelint-config-lintheus.git"
+  },
+  "keywords": [
+    "config",
+    "css",
+    "styleguide",
+    "stylelint"
+  ]
+}

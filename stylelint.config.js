@@ -95,7 +95,7 @@ module.exports = {
     "time-min-milliseconds": [150, {
       "severity": "warning"
     }],
-    "unit-blacklist": ["px", "in", "cm", "mm", "q", "pt", "pc", "ex", "ch"],
+    "unit-blacklist": ["in", "cm", "mm", "q", "pt", "pc", "ex", "ch"],
     "unit-case": "lower",
     "unit-no-unknown": true,
     "declaration-property-value-blacklist": {

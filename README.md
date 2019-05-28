@@ -24,6 +24,13 @@ npm install --save-dev stylelint stylelint-config-lintheus
 }
 ```
 
+## SCSS support
+
+**Lintheus** doesn't support SCSS syntax yet. 
+
+Alternatively, you can use [stylelint-config-recommended-scss] or [stylelint-config-xo-scss].
+
+
 ## FAQ
 
 ### Why the project name is Lintheus?
@@ -42,4 +49,12 @@ EOF
 
 ## Roadmap
 
-- [ ] document the decision behind every rule.
+- [ ] Document the decision behind every rule.
+- [ ] SCSS support.
+
+## Licence
+
+[BSD 2-Clause](https://tldrlegal.com/license/bsd-2-clause-license-(freebsd))
+
+[stylelint-config-recommended-scss]: https://github.com/kristerkari/stylelint-config-recommended-scss
+[stylelint-config-xo-scss]: https://github.com/xojs/stylelint-config-xo-scss

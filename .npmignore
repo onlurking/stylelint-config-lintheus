@@ -3,6 +3,9 @@ Thumbs.db
 .git/
 .node/
 .npmrc
+.editorconfig
+.eslintrc.js
+.prettierrc
 node_modules/
 npm-debug.log
 package-lock.json

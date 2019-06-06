@@ -47,6 +47,22 @@ cat << EOF > .stylelintrc
 EOF
 ```
 
+### I need to break a rule... :disappointed:
+You should strive for not breaking any rule at all.
+
+But if is a must, then, you should make an exception only on the offending line using `stylelint-disable-next-line`, eg:
+
+```css
+/* stylelint-disable-next-line selector-max-specificity */
+.accordion__input:checked + .accordion__label > .accordion__label-image {
+```
+
+If you managed to get two or more offences in the same line, then separate the exceptions with comma, eg:
+```css
+/* stylelint-disable-next-line selector-max-specificity, selector-max-compound-selectors */
+.accordion__input:checked + .accordion__label > .accordion__label-content > .accordion__label-status {
+```
+
 ## Roadmap
 
 - [ ] Document the decision behind every rule.

@@ -3,7 +3,6 @@
  * @license BSD-2-Clause
  */
 
-
 // Always use the BEM naming pattern
 const namingPattern = /^(?:(?:o|c|u|t|s|is|has|_|js|qa)-)?[a-z]+(?:-[a-z]+)*(?:__[a-z]+(?:-[a-z]+)*)?(?:--[a-z]+(?:-[a-z]+)*)?(?:\\[.+\\])?$/;
 
@@ -12,8 +11,28 @@ module.exports = {
   extends: 'stylelint-config-recommended',
   // export namingPattern so it can be used in your own rules
   namingPattern,
-  plugins: ['stylelint-order'],
+  plugins: [
+    'stylelint-order',
+    'stylelint-no-indistinguishable-colors',
+    'stylelint-declaration-use-variable',
+  ],
   rules: {
+    // Warn on less than 3% of diference on colors
+    'plugin/stylelint-no-indistinguishable-colors': true,
+    // Use variable for colors, font-size, box-shadow, border, fill and stroke
+    'sh-waqar/declaration-use-variable': [
+      [
+        '/color/',
+        'font-size',
+        'box-shadow',
+        '/^border$/',
+        'fill',
+        'stroke',
+        {
+          ignoreValues: ['transparent', 'inherit', '0', 'currentColor'],
+        },
+      ],
+    ],
     // At-rule
     'at-rule-no-unknown': true,
     'at-rule-no-vendor-prefix': true,
@@ -59,9 +78,12 @@ module.exports = {
     // Declaration
     'declaration-colon-space-after': 'always',
     'declaration-colon-space-before': 'never',
-    'declaration-empty-line-before': ['never', {
-      ignore: ['after-declaration'],
-    }],
+    'declaration-empty-line-before': [
+      'never',
+      {
+        ignore: ['after-declaration'],
+      },
+    ],
     'declaration-no-important': true,
     'declaration-property-value-blacklist': {
       position: ['fixed', 'sticky'],
@@ -95,10 +117,14 @@ module.exports = {
     indentation: 2,
     linebreaks: 'unix',
     'max-empty-lines': 2,
-    'max-nesting-depth': [3, {
-      ignore: ['blockless-at-rules'],
-      message: "Browsers evaluate selectors from right to left, don't nest more than 3 levels",
-    }],
+    'max-nesting-depth': [
+      3,
+      {
+        ignore: ['blockless-at-rules'],
+        message:
+          "Browsers evaluate selectors from right to left, don't nest more than 3 levels",
+      },
+    ],
     'no-descending-specificity': null,
     'no-duplicate-selectors': true,
     'no-empty-first-line': true,
@@ -107,10 +133,13 @@ module.exports = {
     'no-invalid-double-slash-comments': true,
     'no-missing-end-of-source-newline': true,
     'no-unknown-animations': true,
-    'rule-empty-line-before': ['always-multi-line', {
-      except: ['first-nested'],
-      ignore: ['after-comment'],
-    }],
+    'rule-empty-line-before': [
+      'always-multi-line',
+      {
+        except: ['first-nested'],
+        ignore: ['after-comment'],
+      },
+    ],
 
     // Length
     'length-zero-no-unit': true,
@@ -118,7 +147,10 @@ module.exports = {
     // Media feature
     'media-feature-colon-space-after': 'always',
     'media-feature-colon-space-before': 'never',
-    'media-feature-name-blacklist': ['max-width', { message: 'Always use min-width' }],
+    'media-feature-name-blacklist': [
+      'max-width',
+      { message: 'Always use min-width' },
+    ],
     'media-feature-name-no-vendor-prefix': true,
     'media-feature-parentheses-space-inside': 'never',
     'media-feature-range-operator-space-after': 'always',
@@ -148,18 +180,25 @@ module.exports = {
     'selector-attribute-operator-space-after': 'never',
     'selector-attribute-operator-space-before': 'never',
     'selector-attribute-quotes': 'always',
-    'selector-class-pattern': [namingPattern, {
-      message: 'Selector should be lowercase and follow the BEM pattern (block__element--modifier)',
-    }],
+    'selector-class-pattern': [
+      namingPattern,
+      {
+        message:
+          'Selector should be lowercase and follow the BEM pattern (block__element--modifier)',
+      },
+    ],
     'selector-max-attribute': 8,
     'selector-max-class': 8,
     'selector-max-compound-selectors': 3,
     'selector-combinator-space-after': 'always',
     'selector-max-id': 0,
-    'selector-max-universal': [0, {
-      message: 'Always use class selectors, ids have very high specificity',
-      severity: 'warning',
-    }],
+    'selector-max-universal': [
+      0,
+      {
+        message: 'Always use class selectors, ids have very high specificity',
+        severity: 'warning',
+      },
+    ],
     'selector-max-pseudo-class': 1,
     'selector-max-specificity': '0,2,1',
     'selector-pseudo-class-parentheses-space-inside': 'never',
@@ -167,23 +206,32 @@ module.exports = {
     'selector-pseudo-element-no-unknown': true,
     'selector-type-case': 'lower',
     'selector-type-no-unknown': true,
-    'selector-max-type': [0, {
-      ignore: 'child',
-      message: 'Prefer class selectors',
-    }],
+    'selector-max-type': [
+      0,
+      {
+        ignore: 'child',
+        message: 'Prefer class selectors',
+      },
+    ],
     'selector-no-vendor-prefix': true,
-    'selector-pseudo-class-no-unknown': [true, {
-      ignorePseudoClasses: ['global'],
-    }],
+    'selector-pseudo-class-no-unknown': [
+      true,
+      {
+        ignorePseudoClasses: ['global'],
+      },
+    ],
     'selector-no-qualifying-type': true,
 
     // String
     'string-no-newline': true,
 
     // Time
-    'time-min-milliseconds': [150, {
-      severity: 'warning',
-    }],
+    'time-min-milliseconds': [
+      150,
+      {
+        severity: 'warning',
+      },
+    ],
 
     // Unit
     'unit-blacklist': ['in', 'cm', 'mm', 'q', 'pt', 'pc', 'ex', 'ch'],

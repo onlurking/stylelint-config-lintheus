@@ -37,7 +37,7 @@ module.exports = {
     'at-rule-no-unknown': true,
     'at-rule-no-vendor-prefix': true,
     'at-rule-semicolon-space-before': 'never',
-    'at-rule-property-requirelist': {
+    'at-rule-property-required-list': {
       'font-face': ['font-display', 'font-family', 'font-style'],
     },
 
@@ -65,8 +65,8 @@ module.exports = {
     // Comment
     'comment-no-empty': true,
     'comment-whitespace-inside': 'always',
-    'comment-word-blacklist': [
-      [/^TODO:/, /^FIXME:/, 'fuck', 'shit', 'damn'],
+    'comment-word-disallowed-list': [
+      [/^FIXME:/, 'fuck', 'shit', 'damn'],
       {
         severity: 'warning',
       },
@@ -85,7 +85,7 @@ module.exports = {
       },
     ],
     'declaration-no-important': true,
-    'declaration-property-value-blacklist': {
+    'declaration-property-value-disallowed-list': {
       position: ['fixed', 'sticky'],
       '/^border(?!-(width|spacing))/': [
         /thin/,
@@ -147,7 +147,7 @@ module.exports = {
     // Media feature
     'media-feature-colon-space-after': 'always',
     'media-feature-colon-space-before': 'never',
-    'media-feature-name-blacklist': [
+    'media-feature-name-disallowed-list': [
       'max-width',
       { message: 'Always use min-width' },
     ],
@@ -161,7 +161,7 @@ module.exports = {
     'number-no-trailing-zeros': true,
 
     // Property
-    'property-blacklist': ['float'],
+    'property-disallowed-list': ['float'],
     'property-case': 'lower',
     'property-no-vendor-prefix': [
       true,
@@ -234,7 +234,7 @@ module.exports = {
     ],
 
     // Unit
-    'unit-blacklist': ['in', 'cm', 'mm', 'q', 'pt', 'pc', 'ex', 'ch'],
+    'unit-disallowed-list': ['in', 'cm', 'mm', 'q', 'pt', 'pc', 'ex', 'ch'],
     'unit-case': 'lower',
     'unit-no-unknown': true,
 
